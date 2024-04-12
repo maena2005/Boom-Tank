@@ -21,5 +21,6 @@ public class MenuController : MonoBehaviour
     public void QuitButton()
     {
         Application.Quit();
+        Debug.Log("Tu quittes vraiment le jeu là ?....");
     }
 }
