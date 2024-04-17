@@ -123,6 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5087c93bceb511240bdb1dae92eac7b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 5615497917579445399, guid: 0331b169005eb1d469455efaa6b9024a,
+    type: 3}
 --- !u!54 &2512433371975678176
 Rigidbody:
   m_ObjectHideFlags: 0

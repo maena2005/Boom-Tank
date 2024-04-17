@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
             {
@@ -49,6 +49,6 @@ public class PauseMenu : MonoBehaviour
     public void ExitButton()
     {
         Application.Quit();
-        Debug.Log("Le Jeu ce ferme ohalala");
+        Debug.Log("Le Jeu se ferme ohalala");
     }
 }

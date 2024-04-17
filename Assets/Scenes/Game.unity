@@ -13888,6 +13888,7 @@ GameObject:
   - component: {fileID: 949092483}
   - component: {fileID: 949092482}
   - component: {fileID: 949092481}
+  - component: {fileID: 949092484}
   m_Layer: 0
   m_Name: HUD
   m_TagString: Untagged
@@ -13915,7 +13916,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949092480}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8157ce1d02a2a9949baf5899cd0b7225, type: 3}
   m_Name: 
@@ -13941,6 +13942,23 @@ Transform:
   - {fileID: 1026993674}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &949092484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949092480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae3fb65c943389c438f8aa6333a1936c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalTargets: 5
+  counterText: {fileID: 1465402567}
+  victoryCanvas: {fileID: 2036493523}
+  hudCanvas: {fileID: 949092480}
+  timer: {fileID: 949092481}
 --- !u!4 &951182911 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4234351233338361949, guid: a1b4d59e2c59e8048925614a19a521a4,

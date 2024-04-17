@@ -2,10 +2,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class TargetCounter : MonoBehaviour
+public class TargetCounter_Dydou : MonoBehaviour
 {
     public int totalTargets;
-    private int targetsDestroyed;
+    private int remainingTargets;
     public TextMeshProUGUI counterText;
     public GameObject victoryCanvas; 
     public GameObject hudCanvas; 
@@ -15,18 +15,18 @@ public class TargetCounter : MonoBehaviour
 
     void Start()
     {
-        targetsDestroyed = 0;
+        remainingTargets = totalTargets;
         UpdateCounter();
         timer.StartTimer(); 
     }
 
     public void TargetDestroyed()
     {
-        targetsDestroyed++;
+        remainingTargets--;
         UpdateCounter();
 
         
-        if (targetsDestroyed == totalTargets)
+        if (remainingTargets <= 0)
         {
             
             timer.StopTimer();
@@ -37,7 +37,7 @@ public class TargetCounter : MonoBehaviour
 
     void UpdateCounter()
     {
-        counterText.text = "Targets destroyed: " + targetsDestroyed + " / " + totalTargets;
+        counterText.text = "Target left : " + remainingTargets + " / 5";
     }
 
     void ShowVictoryScreen()
