@@ -9,7 +9,6 @@ public class TargetCounter : MonoBehaviour
     public TextMeshProUGUI counterText;
     public GameObject victoryCanvas; 
     public GameObject hudCanvas; 
-    public Timer timer; 
 
     private bool gamePaused = false;
 
@@ -17,7 +16,6 @@ public class TargetCounter : MonoBehaviour
     {
         targetsDestroyed = 0;
         UpdateCounter();
-        timer.StartTimer(); 
     }
 
     public void TargetDestroyed()
@@ -28,16 +26,13 @@ public class TargetCounter : MonoBehaviour
         
         if (targetsDestroyed == totalTargets)
         {
-            
-            timer.StopTimer();
-            
             ShowVictoryScreen();
         }
     }
 
     void UpdateCounter()
     {
-        counterText.text = "Targets destroyed: " + targetsDestroyed + " / " + totalTargets;
+        counterText.text = targetsDestroyed + " / " + totalTargets;
     }
 
     void ShowVictoryScreen()
