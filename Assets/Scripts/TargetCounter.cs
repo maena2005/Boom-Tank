@@ -8,19 +8,26 @@ public class TargetCounter : MonoBehaviour
     private int targetsDestroyed;
     public TextMeshProUGUI counterText;
     public GameObject victoryCanvas; 
-    public GameObject hudCanvas; 
+    public GameObject hudCanvas;
+    public GameObject[] listCounter;
 
     private bool gamePaused = false;
 
     void Start()
     {
         targetsDestroyed = 0;
+        listCounter[0].SetActive(true);
         UpdateCounter();
     }
 
     public void TargetDestroyed()
     {
+
+        if (listCounter != null && listCounter[targetsDestroyed] != null)
+            listCounter[targetsDestroyed].SetActive(false);
         targetsDestroyed++;
+        if (listCounter != null && listCounter[targetsDestroyed] != null)
+            listCounter[targetsDestroyed].SetActive(true);
         UpdateCounter();
 
         
@@ -32,6 +39,7 @@ public class TargetCounter : MonoBehaviour
 
     void UpdateCounter()
     {
+        
         counterText.text = targetsDestroyed + " / " + totalTargets;
     }
 
@@ -42,7 +50,7 @@ public class TargetCounter : MonoBehaviour
         
         victoryCanvas.SetActive(true);
         
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         gamePaused = true;
     }
 

@@ -1519,7 +1519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3bdbfb3e1bd5b84c8f65008b9de9ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Desert: Game
+  Game: Game
   Settings: Settings
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

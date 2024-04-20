@@ -2,19 +2,24 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public Animator animator; // Référence à l'Animator du mannequin
+    private TargetCounter targetCounter;
+
+    void Start()
+    {
+        targetCounter = FindObjectOfType<TargetCounter>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Target"))
+        if (collision.gameObject.CompareTag("TargetShow"))
         {
             // Déclencher l'animation du mannequin si l'objet touché est une cible
-            if (animator != null /*&& animator.isActiveAndEnabled*/) //&& animator.runtimeAnimatorController != null)
-            {
-                animator.SetBool("isHit", true); // Activer le paramètre IsHit dans l'Animator
-            }            
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<Animator>().SetBool("isHit", true); // Activer le paramètre IsHit dans l'Animator
             
+            if (targetCounter != null)
+            {
+                targetCounter.TargetDestroyed();
+            }
         }
         
         Destroy(gameObject);

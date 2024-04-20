@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    public string Desert;
+    public string Game;
     public string Settings;
     
     public void PlayButton()
     {
-        SceneManager.LoadScene(Desert);
+        SceneManager.LoadScene(Game);
     }
 
     public void SettingButton()
