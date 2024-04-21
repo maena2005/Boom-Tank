@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private TargetCounter targetCounter;
+    private TargetCounter _targetCounter;
 
     void Start()
     {
-        targetCounter = FindObjectOfType<TargetCounter>();
+        _targetCounter = FindFirstObjectByType<TargetCounter>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -16,9 +16,9 @@ public class Bullet : MonoBehaviour
             // Déclencher l'animation du mannequin si l'objet touché est une cible
             collision.gameObject.GetComponent<Animator>().SetBool("isHit", true); // Activer le paramètre IsHit dans l'Animator
             
-            if (targetCounter != null)
+            if (_targetCounter != null)
             {
-                targetCounter.TargetDestroyed();
+                _targetCounter.TargetDestroyed();
             }
         }
         

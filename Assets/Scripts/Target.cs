@@ -2,18 +2,18 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    private TargetCounter targetCounter;
+    private TargetCounter _targetCounter;
 
     void Start()
     {
-        targetCounter = FindObjectOfType<TargetCounter>();
+        _targetCounter = FindFirstObjectByType<TargetCounter>();
     }
 
     void OnDestroy()
     {
-        if (targetCounter != null)
+        if (_targetCounter != null)
         {
-            targetCounter.TargetDestroyed();
+            _targetCounter.TargetDestroyed();
         }
     }
 }

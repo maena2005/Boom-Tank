@@ -5,42 +5,36 @@ using TMPro;
 public class TargetCounter : MonoBehaviour
 {
     public int totalTargets;
-    private int targetsDestroyed;
-    public TextMeshProUGUI counterText;
+    private int _targetsDestroyed;
     public GameObject victoryCanvas; 
     public GameObject hudCanvas;
     public GameObject[] listCounter;
 
-    private bool gamePaused = false;
+    //private bool _gamePaused = false;
 
     void Start()
     {
-        targetsDestroyed = 0;
+        hudCanvas.SetActive(true);
+        victoryCanvas.SetActive(false);
+        
+        _targetsDestroyed = 0;
         listCounter[0].SetActive(true);
-        UpdateCounter();
     }
 
     public void TargetDestroyed()
     {
+        _targetsDestroyed++;
 
-        if (listCounter != null && listCounter[targetsDestroyed] != null)
-            listCounter[targetsDestroyed].SetActive(false);
-        targetsDestroyed++;
-        if (listCounter != null && listCounter[targetsDestroyed] != null)
-            listCounter[targetsDestroyed].SetActive(true);
-        UpdateCounter();
-
+        if (_targetsDestroyed <= totalTargets)
+        {
+            listCounter[_targetsDestroyed - 1 ].SetActive(false);
+            listCounter[_targetsDestroyed].SetActive(true);
+        }
         
-        if (targetsDestroyed == totalTargets)
+        if (_targetsDestroyed == totalTargets)
         {
             ShowVictoryScreen();
         }
-    }
-
-    void UpdateCounter()
-    {
-        
-        counterText.text = targetsDestroyed + " / " + totalTargets;
     }
 
     void ShowVictoryScreen()
@@ -51,7 +45,7 @@ public class TargetCounter : MonoBehaviour
         victoryCanvas.SetActive(true);
         
         //Time.timeScale = 0f;
-        gamePaused = true;
+        //_gamePaused = true;
     }
 
     public void ResumeGame()
@@ -61,7 +55,7 @@ public class TargetCounter : MonoBehaviour
         
         victoryCanvas.SetActive(false);
         Time.timeScale = 1f;
-        gamePaused = false;
+        //_gamePaused = false;
     }
 
     

@@ -1,19 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InitTarget : MonoBehaviour
 {
     public GameObject[] listTargets;
-    public GameObject[] listInitTargets;
-    private TargetCounter targetCounter;
+    private TargetCounter _targetCounter;
     
     // Start is called before the first frame update
     void Start()
     {
-        targetCounter = FindObjectOfType<TargetCounter>();
-        
-        listInitTargets = GameObject.FindGameObjectsWithTag("Target");
+        _targetCounter = FindFirstObjectByType<TargetCounter>();
         
         RandomTargets();
         listTargets = GameObject.FindGameObjectsWithTag("Target");
@@ -23,21 +21,18 @@ public class InitTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if(Input.GetKeyDown(KeyCode.Tab))
         {
-            listTargets = GameObject.FindGameObjectsWithTag("Target");
-            for (var i = 0; i < listTargets.Length; i++)
-            {
-                listTargets[i].tag = "Target";
-            }
-            InitTargets(listInitTargets,true);
-
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
         }
+        */
     }
 
     private void RandomTargets()
     {
-        for (var i = 0; i < targetCounter.totalTargets; i++)
+        for (var i = 0; i < _targetCounter.totalTargets; i++)
         {
             listTargets = GameObject.FindGameObjectsWithTag("Target");
             var iRnd = Random.Range(0, listTargets.Length);
