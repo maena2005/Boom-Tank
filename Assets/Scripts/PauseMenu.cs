@@ -25,7 +25,7 @@ public class PauseMenu : MonoBehaviour
     void PauseGame()
     {
         isPaused = true;
-        hud.SetActive(false);
+        //hud.SetActive(false);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f; 
     }
@@ -34,7 +34,7 @@ public class PauseMenu : MonoBehaviour
     {
         isPaused = false;
         pauseMenuUI.SetActive(false);
-        hud.SetActive(true);
+        //hud.SetActive(true);
         Time.timeScale = 1f;
     }
 

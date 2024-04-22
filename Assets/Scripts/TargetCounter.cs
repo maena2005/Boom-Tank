@@ -44,7 +44,7 @@ public class TargetCounter : MonoBehaviour
         
         victoryCanvas.SetActive(true);
         
-        //Time.timeScale = 0f;
+        Time.timeScale = 0f;
         //_gamePaused = true;
     }
 
