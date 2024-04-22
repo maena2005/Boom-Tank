@@ -4,12 +4,14 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     public GameObject hud;
+    public GameObject Controls;
 
     private bool isPaused = false;
+    private bool isControls = false;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && isControls == false)
         {
             if (isPaused)
             {
@@ -19,6 +21,14 @@ public class PauseMenu : MonoBehaviour
             {
                 PauseGame();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && isControls == true)
+        {
+            isControls = false;
+            Controls.SetActive(false);
+            pauseMenuUI.SetActive(true);
+            hud.SetActive(true);
         }
     }
 
@@ -51,4 +61,22 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();
         Debug.Log("Le Jeu se ferme ohalala");
     }
+
+    public void ControlsButton()
+    {
+        isControls = true;
+        pauseMenuUI.SetActive(false);
+        Controls.SetActive(true);
+        hud.SetActive(false);
+    }
+
+    public void BackToPauseMenuCross()
+    {
+        isControls = false;
+        Controls.SetActive(false);
+        pauseMenuUI.SetActive(true);
+        hud.SetActive(true);
+    }
+    
+    
 }
