@@ -1,11 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     public GameObject hud;
     public GameObject Controls;
-
+    public Image imageToShow1;
+    public Image imageToShow2;
+    public Image imageToShow3;
+    
     private bool isPaused = false;
     private bool isControls = false;
 
@@ -16,6 +20,9 @@ public class PauseMenu : MonoBehaviour
             if (isPaused)
             {
                 ResumeGame();
+                imageToShow1.enabled = false;
+                imageToShow2.enabled = false;
+                imageToShow3.enabled = false;
             }
             else
             {
@@ -68,6 +75,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Controls.SetActive(true);
         hud.SetActive(false);
+        imageToShow1.enabled = false;
     }
 
     public void BackToPauseMenuCross()

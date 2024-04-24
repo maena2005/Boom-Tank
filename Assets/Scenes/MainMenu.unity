@@ -462,7 +462,7 @@ GameObject:
   - component: {fileID: 418414060}
   - component: {fileID: 418414063}
   m_Layer: 5
-  m_Name: SettingsButton
+  m_Name: ControlButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -477,14 +477,14 @@ RectTransform:
   m_GameObject: {fileID: 418414058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.712892, y: 1.778502, z: 1.735124}
+  m_LocalScale: {x: 1.7128924, y: 1.7785015, z: 1.7351235}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1781206488}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -29.9}
+  m_AnchoredPosition: {x: 1, y: -31.1}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &418414060
@@ -551,7 +551,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cb8b5fbbd8dc2914fb69116b56a53905, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f913a7d6a93da294b88bb0ec51d76de3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
