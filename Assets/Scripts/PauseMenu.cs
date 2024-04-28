@@ -1,5 +1,8 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -12,10 +15,25 @@ public class PauseMenu : MonoBehaviour
     
     private bool isPaused = false;
     private bool isControls = false;
+    private bool isDrowned = false;
+    
+    public string MainMenu;
+    
+    //For DrownedManagmentCS
+    public GameObject DrownedScreen;
+    public GameObject HUD;
+    private bool tankEntered;
+    private WaitForSeconds delayBeforeGameOver = new WaitForSeconds(0.3f);
+    //-----------------------------//
+    private void Start()
+    {
+        //Time.timeScale = 1f;
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && isControls == false)
+        
+        if (Input.GetKeyDown(KeyCode.Escape) && isControls == false && isDrowned == false)
         {
             if (isPaused)
             {
@@ -38,7 +56,41 @@ public class PauseMenu : MonoBehaviour
             hud.SetActive(true);
         }
     }
+    
+    //For DrownedManagmentCS
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Tank") && !tankEntered)
+        {
+            tankEntered = true;
+            StartCoroutine(ShowGameOverAfterDelay());
+        }
+    }
 
+    private IEnumerator ShowGameOverAfterDelay()
+    {
+        yield return delayBeforeGameOver;
+        Time.timeScale = 0f;
+        HUD.SetActive(false);
+        isDrowned = true;
+        DrownedScreen.SetActive(true);
+    }
+    //-----------------------------//
+    public void MainMenuButton()
+    {
+        isDrowned = false;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(MainMenu);
+        
+    }
+    
+    public void PlayAgainButton()
+    {
+        isDrowned = false;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     void PauseGame()
     {
         isPaused = true;

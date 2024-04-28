@@ -8182,8 +8182,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1161701883}
-        m_TargetAssemblyTypeName: DrownedScreenMenu, Assembly-CSharp
+      - m_Target: {fileID: 1161701885}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: PlayAgainButton
         m_Mode: 1
         m_Arguments:
@@ -12139,8 +12139,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1161701883}
-        m_TargetAssemblyTypeName: DrownedScreenMenu, Assembly-CSharp
+      - m_Target: {fileID: 1161701885}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: MainMenuButton
         m_Mode: 1
         m_Arguments:
@@ -20164,7 +20164,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1161701883}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DrownedScreenMenu, Assembly-CSharp
         m_MethodName: PlayAgainButton
         m_Mode: 1
@@ -25755,7 +25755,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1161701883}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DrownedScreenMenu, Assembly-CSharp
         m_MethodName: MainMenuButton
         m_Mode: 1
@@ -34447,7 +34447,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1161701883}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DrownedScreenMenu, Assembly-CSharp
         m_MethodName: MainMenuButton
         m_Mode: 1
@@ -34612,7 +34612,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3569279380451398375, guid: a1b4d59e2c59e8048925614a19a521a4,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 951182915}
+      addedObject: {fileID: 951182919}
   m_SourcePrefab: {fileID: 100100000, guid: a1b4d59e2c59e8048925614a19a521a4, type: 3}
 --- !u!1 &949092480
 GameObject:
@@ -34675,7 +34675,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 945969823}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &951182915
+--- !u!114 &951182919
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34684,9 +34684,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 825659158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30dd96f398ca35440b1cf5908c6f94d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e46c0cb73d06c44c85cadd59a193b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 779211060}
+  hud: {fileID: 0}
+  Controls: {fileID: 0}
+  imageToShow1: {fileID: 0}
+  imageToShow2: {fileID: 0}
+  imageToShow3: {fileID: 0}
+  MainMenu: 
   DrownedScreen: {fileID: 1161701882}
   HUD: {fileID: 949092480}
 --- !u!1001 &952201198
@@ -41946,7 +41953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1161701884}
-  - component: {fileID: 1161701883}
+  - component: {fileID: 1161701885}
   m_Layer: 0
   m_Name: DrownedScreen
   m_TagString: Untagged
@@ -41954,19 +41961,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1161701883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161701882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edc859e997a7fba4c97645b9c5299927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainMenu: MainMenu
 --- !u!4 &1161701884
 Transform:
   m_ObjectHideFlags: 0
@@ -41983,6 +41977,27 @@ Transform:
   - {fileID: 2093291462}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1161701885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161701882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e46c0cb73d06c44c85cadd59a193b33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 0}
+  hud: {fileID: 0}
+  Controls: {fileID: 0}
+  imageToShow1: {fileID: 0}
+  imageToShow2: {fileID: 0}
+  imageToShow3: {fileID: 0}
+  MainMenu: MainMenu
+  DrownedScreen: {fileID: 0}
+  HUD: {fileID: 0}
 --- !u!1001 &1163093796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42091,6 +42106,9 @@ MonoBehaviour:
   imageToShow1: {fileID: 1086878268}
   imageToShow2: {fileID: 398007365}
   imageToShow3: {fileID: 575941192}
+  MainMenu: 
+  DrownedScreen: {fileID: 0}
+  HUD: {fileID: 0}
 --- !u!4 &1164153637 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2524911385186326283, guid: 7459861c1d37ea34b87a556f5a00d8b2,
@@ -42193,7 +42211,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2072952203}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1167045956
+--- !u!114 &1167045960
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42202,9 +42220,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1167045954}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30dd96f398ca35440b1cf5908c6f94d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e46c0cb73d06c44c85cadd59a193b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 779211060}
+  hud: {fileID: 0}
+  Controls: {fileID: 0}
+  imageToShow1: {fileID: 0}
+  imageToShow2: {fileID: 0}
+  imageToShow3: {fileID: 0}
+  MainMenu: 
   DrownedScreen: {fileID: 1161701882}
   HUD: {fileID: 949092480}
 --- !u!1001 &1167354013
@@ -64407,7 +64432,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3569279380451398375, guid: a1b4d59e2c59e8048925614a19a521a4,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1709456770}
+      addedObject: {fileID: 1709456774}
   m_SourcePrefab: {fileID: 100100000, guid: a1b4d59e2c59e8048925614a19a521a4, type: 3}
 --- !u!4 &1709456768 stripped
 Transform:
@@ -64421,7 +64446,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1709456767}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1709456770
+--- !u!114 &1709456774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64430,9 +64455,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1709456769}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30dd96f398ca35440b1cf5908c6f94d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e46c0cb73d06c44c85cadd59a193b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 779211060}
+  hud: {fileID: 0}
+  Controls: {fileID: 0}
+  imageToShow1: {fileID: 0}
+  imageToShow2: {fileID: 0}
+  imageToShow3: {fileID: 0}
+  MainMenu: 
   DrownedScreen: {fileID: 1161701882}
   HUD: {fileID: 949092480}
 --- !u!4 &1714855407 stripped
@@ -77469,7 +77501,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3569279380451398375, guid: a1b4d59e2c59e8048925614a19a521a4,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1167045956}
+      addedObject: {fileID: 1167045960}
   m_SourcePrefab: {fileID: 100100000, guid: a1b4d59e2c59e8048925614a19a521a4, type: 3}
 --- !u!1 &2076721969
 GameObject:
@@ -80624,7 +80656,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3569279380451398375, guid: a1b4d59e2c59e8048925614a19a521a4,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3743261675651265046}
+      addedObject: {fileID: 3743261675651265050}
   m_SourcePrefab: {fileID: 100100000, guid: a1b4d59e2c59e8048925614a19a521a4, type: 3}
 --- !u!4 &862528517490853873 stripped
 Transform:
@@ -81024,7 +81056,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 662535652123359823}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3743261675651265046
+--- !u!114 &3743261675651265050
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81033,9 +81065,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 56762115}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30dd96f398ca35440b1cf5908c6f94d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e46c0cb73d06c44c85cadd59a193b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 779211060}
+  hud: {fileID: 0}
+  Controls: {fileID: 0}
+  imageToShow1: {fileID: 0}
+  imageToShow2: {fileID: 0}
+  imageToShow3: {fileID: 0}
+  MainMenu: 
   DrownedScreen: {fileID: 1161701882}
   HUD: {fileID: 949092480}
 --- !u!1001 &4136449104160259765
