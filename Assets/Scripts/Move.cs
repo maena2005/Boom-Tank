@@ -41,12 +41,12 @@ public class Move : MonoBehaviour
     public void HandleRotate(InputAction.CallbackContext Inputcontext)
     {
         rotateAxis = Inputcontext.ReadValue<float>();
-        Debug.Log("Rotate =" + rotateAxis);
+        //Debug.Log("Rotate =" + rotateAxis);
     }
     public void HandleMove(InputAction.CallbackContext Inputcontext)
     {
         moveAxis = Inputcontext.ReadValue<float>();
-        Debug.Log("Move =" + moveAxis);
+        //Debug.Log("Move =" + moveAxis);
     }
 
     private void FixedUpdate() // se déroule toutes les 30 frames (on peut le choisir) => pour gagner perf
